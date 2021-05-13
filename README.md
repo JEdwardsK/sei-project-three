@@ -126,7 +126,8 @@ const pubSchema = new mongoose.Schema(
   { timestamps: true }
 )
 ```
-After testing the routes in Insomnia, I [documented]('https://github.com/JEdwardsK/sei-project-three/blob/main/API-documentation.md') the requests for the front end team
+After testing the routes in Insomnia, I [documented](https://github.com/JEdwardsK/sei-project-three/blob/main/API-documentation.md) the requests for the front end team.
+
 ### Known Errors
 - Images do not upload correctly depending on file size, a message needs to display to user to wait for image to appear before continuing
 - Can create pubs, however cannot view them on pub show page
@@ -134,6 +135,7 @@ After testing the routes in Insomnia, I [documented]('https://github.com/JEdward
 ### Future Improvements
 
 There are a number of possible improvements or added features to be potentially looked at in the future.
+
 #### Additional Features
 - Implementing the stretch goals that weren't achieved
   - adding pub crawl functionality
@@ -143,6 +145,7 @@ There are a number of possible improvements or added features to be potentially 
 - Adding localisation languages toggle
 - Using external API for address autocomplete in forms
 - Utilising the `isFirstTime` field to onboard the user through the site
+
 #### Edits and Updates/Fixes
 - Refining form validation
 - Fixes to location data
