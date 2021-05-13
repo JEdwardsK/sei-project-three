@@ -1,10 +1,7 @@
-
-<img src="./images/logo.sample.png" alt="Logo of the project" align="right">
-
 # PubHub
 > SEI Project 3 - full stack express app
 
-A brief description of your project, what it is used for.
+
 
 Team Members
 - Harry Warwick [<img src="./readme/github.png" width="25">](http://github.com/hfrwarwick) [<img src="./readme/linkedin.png" width="31.5">](http://linkedin.com/in/harrywarwick)
@@ -16,7 +13,7 @@ Team Members
 
 ## Installing / Getting started
 
-he initial setup for the front end is handled by `create-react-app` using the GA London template
+The initial setup for the front end is handled by `create-react-app` using the GA London template.
 ```shell
 $ yarn create react-app client --template cra-template-ga-ldn
 ```
@@ -64,27 +61,27 @@ Stretch Goals:
 ### Functionality
 #### CRUD
 
-create
-- users can register an account to access extra functions on the website
-- registered users can add their own pubs
-- registered users can add comments to a pub
+Create
+- Users can register an account to access extra functions on the website
+- Registered users can add their own pubs
+- Registered users can add comments to a pub
 
-read
-- requests are sent to get data from the database to render on the site
+Read
+- Requests are sent to get data from the database to render on the site
 
 Update
-- users can update their own accounts
-- landlords can update their pubs information
+- Users can update their own accounts
+- Landlords can update their pubs information
 
-delete
-- users can delete their accounts
-- landlords can delete pubs
-- users can delete their reviews to pubs
+Delete
+- Users can delete their accounts
+- Landlords can delete pubs
+- Users can delete their reviews to pubs
 
 #### Personal Responsibilities
 I was tasked with handling the backend creation, user models and requests. the following data structures were used:
 
-for the user:
+For the user:
 ```javascript
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true, maxlength: 40 },
@@ -105,7 +102,7 @@ const userSchema = new mongoose.Schema({
 })
 ```
 
-for the pubs
+For the pubs
 ```javascript
 const pubSchema = new mongoose.Schema(
   {
@@ -129,11 +126,10 @@ const pubSchema = new mongoose.Schema(
   { timestamps: true }
 )
 ```
-
-### Design
-### Added Functionality Attempts
+After testing the routes in Insomnia, I [documented]('./API-documentation') the requests for the front end team
 ### Known Errors
-- images do not upload correctly depending on file size, works for some users.
+- Images do not upload correctly depending on file size, a message needs to display to user to wait for image to appear before continuing
+- Can create pubs, however cannot view them on pub show page
 ### Future Improvements
 
 There are a number of possible improvements or added features to be potentially looked at in the future.
@@ -145,11 +141,12 @@ There are a number of possible improvements or added features to be potentially 
 - Completing remove from pub favourites
 - Adding localisation languages toggle
 - Using external API for address autocomplete in forms
-- Utilising the isFirstLogin field to onboard the user through the site
--
+- Utilising the `isFirstTime` field to onboard the user through the site
 #### Edits and Updates/Fixes
 - Refining form validation
 - Fixes to location data
+- Reviews do not update to display profile image
+- need to do `Math.round()` on review score, currently recursive
 
 In general, I would also like to go back to refine the code, for readability, and to be able to make extractable components or features that can be reused or repurposed in future projects.
 
@@ -157,7 +154,7 @@ In general, I would also like to go back to refine the code, for readability, an
 
 ### Wins/ Challenges
 
-On submitting the request to update the pub on the database, we found that an error occurred due to our nested object data structure. Any nested fields in `formData` was flattened during the submission.
+On submitting the request to update the pub on the database, we found that an error occurred due to our nested object data structure. Any nested fields in `formData` was flattened when the request was sent.
 
 To combat this the controller had to be modified in the backend. Initially, it was the following
 ```javascript
@@ -186,7 +183,7 @@ export const addReviewtoPub = async (req, res) => {
   }
 }
 ```
-Instead of `...req.body`, we changed `const newPub` to the following:
+Instead of `...req.body`, I changed `const newPub` to the following:
 ```javascript
  // spreading in the data changed as react doesn't like state of nested objects
 const newReview = {
@@ -229,76 +226,93 @@ pubSchema.virtual('locationCoordinates').get(async function () {
 I couldn't get the field working, so we cheated by having an array of longitudes and latitudes to populate the map for the seeded data. This is something that I would return to to fix at a later date if possible for improvements
 
 
-Working in a team environment was good as it helped combat individual weaknesses. For example, I was not as confident with regards to CSS and styling elements, but could rely on other members to pick up these tasks and walk me through their process or code. Similarly, being able to jump in and pair code through Live Share or over a Zoom screen share was helpful when another team member was struggling with their tasks. Even just having someone to talk your process through makes a difference when working towards a solution.
+Working in a team environment was good as it helped combat individual weaknesses. For example, I was not as confident with regards to CSS and styling elements, but could rely on other members to pick up these tasks and walk me through their process or code. Similarly, being able to jump in and pair code through Live Share or over a Zoom screen share was helpful when another team member was struggling with their tasks. Even just having someone to talk your process through made a difference when working towards a solution.
 
 ### Wallkthrough
 #### Pubs
 From the homepage the user can navigate to either:
-- list all pubs on the database
+
 - search for a pub by location or pub name
 - register or login
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubHubLink.png">
 
 The page also displays three popular cities to filter pubs by, and a link to register as a landlord
 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/popcities.png">
 
-
-
-should the user search for a pub or location that does not exist they are directed to an error page that links them to the index page.
+Should the user search for a pub or location that does not exist they are directed to an error page that links them to the index page.
 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/searcherror.png">
 
-On the index page, the user can filter by listed variables. The map displays the pubs, and a user can click the icon to navigate to the pubs show page. alternatively, the user can click on the pubs image
+On the index page, the user can filter by listed variables. The map displays the pubs, and a user can click the icon to navigate to the pubs show page. alternatively, the user can click on the pubs image. The map updates its view based on the location searched for, defaulting on London.
 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubindex.png">
 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/filterpubs.png">
 
-the pub profile displays information.
+The pub profile displays information.
 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubshow.png">
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubshow2.png">
 
-conditional to the user signing in they can post reviews and save to pubs.
+Conditional to the user signing in they can post reviews and save to pubs.
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/signedpubshow.png">
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/signedpubshow2.png">
 
+The user can submit a review. The page also displays a randomly generated list of pubs in the same city as the displayed
 
-user can submit a review
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/review.png">
 
-this updates on the pubs page
+This updates on the pub's page
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/reviewupdate.png">
 
-The page adjusts the average rating based on the submitted reviews. (the average for bruce wayne was 4s, jokers was 1s). The Comment section in the review submission is optional
+The page adjusts the average rating based on the submitted reviews. The Comment section in the review submission is optional
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/updatedrating.png">
 
 Saving a pub will add it to a list of favourites, which is accessed through the drop down menu.
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/savedpubs.png">
 
 #### Users
 
-users can login or register through the dropdown menu which opens a modal form.
+Users can login or register through the dropdown menu which opens a modal form.
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/login.png">
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/loginconfirm.png">
 
-after registering the user is redirected to a login page
+After registering the user is redirected to a login page.
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/register.png">
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/loginregister.png">
 
 
-users can navigate either through the header or through become a landlord page. if the user is the button text will either say 'login to get started' or 'get started' depending on whether the user is logged in.
+Users can navigate either through the header or through become a landlord page. The button text will either say 'login to get started' or 'get started' depending on whether the user is logged in.
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/becomelandlord.png">
 
-running through the prompts to submit the pub:
+Running through the prompts to submit the pub:
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubmake1.png">
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubmake2.png">
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubmake3.png">
 
+The pub will then appear in the pub index.
 
-<!-- the user is then directed to the pubshow page to view their pub
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/addedpub.png">
 
-a user has both a landlord and a personal profile page
+Users have two profile pages, personal and landlord. The personal profile page allows the user to edit or profile and delete any comments they made on a pub.
+
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/profile.png">
-<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/register.png"> -->
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/deleteprofile.png">
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/deletereview.png">
+
+The landlord page displays all of the pubs they own and allows them to navigate to them(currently the show page for created pubs appears to be bugged)
+
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/landlordprofile.png">
+
+
