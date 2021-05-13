@@ -18,7 +18,7 @@
   "scripts": {
     "serve": "npx nodemon index.js",
     "seed": "node db/seeds.js",
-    "ss": "npx nodemon index.js && yarn node db/seeds.js ",
+    "ss": "npx nodemon index.js && node db/seeds.js ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
     "start": "node index.js",

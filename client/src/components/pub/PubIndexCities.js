@@ -34,6 +34,7 @@ const PubIndexCities = () => {
       setSports(false)
       setFood(false)
       setFilterPubs(false)
+
     } else {
       setSeats(false)
     }
@@ -115,6 +116,9 @@ const PubIndexCities = () => {
   const isRating = pubs.sort((a, b) => {
     return b - a
   })
+    '🚀 ~ file: PubIndex.js ~ line 115 ~ isRating ~ isRating',
+    isRating
+  )
 
   return (
     <>
