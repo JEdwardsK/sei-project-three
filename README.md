@@ -292,13 +292,13 @@ users can navigate either through the header or through become a landlord page. 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/becomelandlord.png">
 
 running through the prompts to submit the pub:
-<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/profile.png">
-<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/profile.png">
-<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/profile.png">
-<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/profile.png">
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubmake1.png">
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubmake2.png">
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubmake3.png">
 
-the user is then directed to the pubshow page to view their pub
+
+<!-- the user is then directed to the pubshow page to view their pub
 
 a user has both a landlord and a personal profile page
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/profile.png">
-<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/register.png">
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/register.png"> -->
