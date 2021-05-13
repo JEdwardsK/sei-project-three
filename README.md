@@ -126,7 +126,7 @@ const pubSchema = new mongoose.Schema(
   { timestamps: true }
 )
 ```
-After testing the routes in Insomnia, I [documented]('./API-documentation') the requests for the front end team
+After testing the routes in Insomnia, I [documented]('https://github.com/JEdwardsK/sei-project-three/blob/main/API-documentation.md') the requests for the front end team
 ### Known Errors
 - Images do not upload correctly depending on file size, a message needs to display to user to wait for image to appear before continuing
 - Can create pubs, however cannot view them on pub show page
