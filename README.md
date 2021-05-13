@@ -130,6 +130,7 @@ After testing the routes in Insomnia, I [documented]('./API-documentation') the 
 ### Known Errors
 - Images do not upload correctly depending on file size, a message needs to display to user to wait for image to appear before continuing
 - Can create pubs, however cannot view them on pub show page
+- If the Address is fake, the `pubShow` page will not load
 ### Future Improvements
 
 There are a number of possible improvements or added features to be potentially looked at in the future.
@@ -146,7 +147,19 @@ There are a number of possible improvements or added features to be potentially 
 - Refining form validation
 - Fixes to location data
 - Reviews do not update to display profile image
-- need to do `Math.round()` on review score, currently recursive
+- `Math.round()` on review score, currently, recurring decimals may appear dependant on average
+- Changing certain linking for better flow. For example:
+  - Navigating to landlord profile instead of user profile on pub delete.
+  - Conditionally rendering the landlord profile in the dropdown to only display if you own pubs
+    ```javascript
+    const userOwnedPubs = pubs.filter((pub) => pub.pubOwner === userID)
+
+    { userOwnedPubs.length > 0 &&
+    // the landlord profile link
+    }
+    ```
+  - Having the become a landlord path also include registration, currently requires you to sign in.
+- Finish Edit pub implementation
 
 In general, I would also like to go back to refine the code, for readability, and to be able to make extractable components or features that can be reused or repurposed in future projects.
 
@@ -304,6 +317,11 @@ Running through the prompts to submit the pub:
 The pub will then appear in the pub index.
 
 <img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/addedpub.png">
+
+Navigating to the pub index, if the usr is the landlord of the pub, instead of 'Share' and 'Save/Saved' they see 'Edit' and 'Delete'(Edit currently not functioning). They can delete their pub, doing so will navigate them to their profile page
+
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/newpub.png">
+<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/deletepub.png">
 
 Users have two profile pages, personal and landlord. The personal profile page allows the user to edit or profile and delete any comments they made on a pub.
 
