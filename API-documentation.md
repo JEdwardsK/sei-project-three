@@ -74,7 +74,7 @@ Must meet the minimum required structure above to edit correctly.
 	  - data target: deletes pub with matching id
 
 
-## Users
+## USERS
 Users have the following data structure:
 
 There are two types of users:
