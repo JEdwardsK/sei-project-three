@@ -130,7 +130,7 @@ After testing the routes in Insomnia, I [documented]('./API-documentation') the 
 ### Known Errors
 - Images do not upload correctly depending on file size, a message needs to display to user to wait for image to appear before continuing
 - Can create pubs, however cannot view them on pub show page
-- If the Address is fake, the `pubShow` page will not load
+- If the address is fake, the `pubShow` page will not load
 ### Future Improvements
 
 There are a number of possible improvements or added features to be potentially looked at in the future.
