@@ -1,6 +1,7 @@
 # PubHub
 > SEI Project 3 - full stack express app
 
+The goal of this project was to create a full stack express app. The brief required: the use of an Express API to serve data from a Mongo database; a front end built with Reactjs to consume the API and CRUD functionality.
 
 
 Team Members
