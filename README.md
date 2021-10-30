@@ -4,10 +4,13 @@
 The goal of this project was to create a full stack express app. The brief required: the use of an Express API to serve data from a Mongo database; a front end built with Reactjs to consume the API and CRUD functionality.
 
 
-Team Members
-- Harry Warwick [<img src="./readme/github.png" width="25">](http://github.com/hfrwarwick) [<img src="./readme/linkedin.png" width="31.5">](http://linkedin.com/in/harrywarwick)
-- Atilla Arlsan [<img src="./readme/github.png" width="25">](https://github.com/Atilla-Arslan) [<img src="./readme/linkedin.png" width="31.5">](https://www.linkedin.com/in/atilla-arslan7)
-- Olivia Flynn [<img src="./readme/github.png" width="25">](http://github.com/oliviafpersonal) [<img src="./readme/linkedin.png" width="31.5">](http://bit.ly/oliviaflynn)
+Team Members:
+
+| Name |GitHub | LinkedIn|
+---|---|---
+Harry Warwick |[<img src="./readme/github.png" width="25">](http://github.com/hfrwarwick)| [<img src="./readme/linkedin.png" width="31.5">](http://linkedin.com/in/harrywarwick)
+Atilla Arlsan |[<img src="./readme/github.png" width="25">](https://github.com/Atilla-Arslan)|[<img src="./readme/linkedin.png" width="31.5">](https://www.linkedin.com/in/atilla-arslan7)
+Olivia Flynn |[<img src="./readme/github.png" width="25">](http://github.com/oliviafpersonal) |[<img src="./readme/linkedin.png" width="31.5">](http://bit.ly/oliviaflynn)
 
 [<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/pubHubLink.png">](https://pubhub-new.herokuapp.com/)
 ><small>Click the image for a link to the deployed project</small>
