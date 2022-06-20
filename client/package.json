@@ -8,7 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@ideal-postcodes/core-axios": "^2.2.4",
     "@ideal-postcodes/core-interface": "^1.9.0",
-    "@ideal-postcodes/core-node": "^2.1.0",
+    "@ideal-postcodes/core-node": "^3.0.0",
     "animate.css": "^4.1.1",
     "axios": "^0.21.3",
     "bulma": "^0.9.2",
